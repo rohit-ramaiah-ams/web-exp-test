@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Memo Minder</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css" integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+    <script src="js/memominder.js"></script>
+   
+    
+    <script src="https://cdn.amplitude.com/libs/analytics-browser-2.9.0-min.js.gz"></script>
+    <script src="https://cdn.amplitude.com/libs/plugin-session-replay-browser-1.4.0-min.js.gz"></script>
+
+  <script>
+    const sessionReplayTracking = window.sessionReplay.plugin();
+    window.amplitude.add(sessionReplayTracking);
+    window.amplitude.init("383a067bf6e6a9ff502156492a2bdeb8")
+  </script>
+
+<script src="https://cdn.amplitude.com/script/383a067bf6e6a9ff502156492a2bdeb8.experiment.js"></script>
+<script>
+
+
+
+
+        function setLabel() {
+	    console.log("Setting label");
+
+            document.getElementById("add-memo").innerHTML = "New Memo";
+            document.getElementById("add-memo").style.visibility = "";
+         }
+
+
+
+</script>
+  </head>
+  <body onload="setLabel()">
+    <div class="pure-g">
+      <div class="pure-u-3-24"></div>
+      <div class="pure-u-18-24">
+      <h1>Memo Minder</h1>
+        <form class="pure-form pure-form-stacked" id="memo-input-form">
+	  <fieldset>
+		<legend><b>Add Reminder</b></legend>
+		<label for="memo-subject">Subject</label>
+                <input type="text" id="memo-subject" size="80" placeholder="Enter the memo subject ...">
+		<label for="memo-priority">Priority</label>
+                <select id="memo-priority">
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
+                </select>
+		<button type="submit" style="visibility:hidden" id="add-memo" class="pure-button pure-button-primary">Add</button>
+	  </fieldset>
+	<hr>
+        </form>
+        <div id="memosList">
+		<table class="pure-table pure-table-horizontal">
+                        <thead><tr><th>Subject</th><th>Priority</th><th>Status</th><th></th><th></th></tr></thead>
+		<p></p>
+		</table>
+        </div>
+     </div>
+    </div>
+  </body>
+</html>
